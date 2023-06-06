@@ -5,7 +5,7 @@ class Options
       'List all music albums',
       'List all movies',
       'List of games',
-      'List all genres',
+      'List all genres (e.g "Comedy", "Thriller")',
       'List all labels',
       'List all authors',
       'List all sources',
