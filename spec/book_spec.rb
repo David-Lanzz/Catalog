@@ -1,6 +1,5 @@
 require './classes/book'
 require './classes/label'
-require './classes/item'
 
 describe Book do
   label = Label.new('new label', 'red')
