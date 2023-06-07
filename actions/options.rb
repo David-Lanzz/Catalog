@@ -12,7 +12,8 @@ class Options
       'Add a book',
       'Add a music album',
       'Add a movie',
-      'Add a game'
+      'Add a game',
+      'Exit'
     ]
     options.each do |option|
       puts option

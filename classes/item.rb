@@ -1,20 +1,27 @@
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date, :archived
+  attr_accessor :genre, :author, :source, :publish_date, :archived
+  attr_reader :label
 
-  def initialize(genre, author, source, date)
-    @id = Random.rand
+  def initialize(genre, author, source, date, label)
+    @id = Random.rand(1..1000)
     @genre = genre
     @author = author
     @source = source
-    @label = nil
     @publish_date = date
     @archived = false
+    @label = label
+    label.items << self unless label.items.include?(self)
   end
 
   def move_to_archive
     return unless can_be_archived?
 
     @archived = true
+  end
+
+  def label=(label)
+    @label = label
+    label.items << self unless label.items.include?(self)
   end
 
   private
