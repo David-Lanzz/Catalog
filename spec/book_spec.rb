@@ -2,7 +2,7 @@ require './classes/book'
 
 describe Book do
   book = Book.new('Bloomsbury', 'good', 'Fiction', 'J.K. Rowling', 'bookstore', '2022-11-11', 'Harry Potter')
-  
+
   context '#initialize' do
     it 'should create a new book' do
       expect(book).to be_truthy
