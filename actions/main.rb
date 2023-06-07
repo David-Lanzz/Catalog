@@ -8,7 +8,11 @@ class Main
   end
 
   def run
+    puts '----------------------'
+    puts 'Welcome to the app!'
     loop do
+      puts '----------------------'
+      puts 'Please choose an option: [1-13]'
       Options.new
       choice = gets.chomp.to_i
       Choices.new(choice, @app)

@@ -1,6 +1,6 @@
-require './classes/album'
+require '../classes/album'
 require 'date'
-require './classes/genre'
+require '../classes/genre'
 
 class App
   def initialize
@@ -38,4 +38,9 @@ class App
     @music_albums << new_album
     puts 'Music album created successfully'
   end
+
+  def exit_app
+    puts 'Thank you for using the app'
+    exit
+    end
 end

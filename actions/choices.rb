@@ -8,6 +8,10 @@ class Choices
       app.list_all_music_albums
     when 5
       app.list_all_genres
+    when 13
+      app.exit_app
+    else
+      puts 'Invalid option'
     end
   end
 end

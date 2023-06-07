@@ -1,6 +1,6 @@
 class Options
   def initialize
-    options = [
+    @options = [
       'List all books',
       'List all music albums',
       'List all movies',
@@ -12,10 +12,11 @@ class Options
       'Add a book',
       'Add a music album',
       'Add a movie',
-      'Add a game'
+      'Add a game',
+      'exit the app'
     ]
-    options.each do |option|
-      puts option
+    @options.each_with_index do |option, index|
+      puts "#{index+1}. #{option}"
     end
   end
 end
