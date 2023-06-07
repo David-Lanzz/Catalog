@@ -1,12 +1,12 @@
 class Item
   attr_accessor :genre, :author, :source, :label, :publish_date, :archived
 
-  def initialize(genre, author, source, date, _label)
-    @id = Random.rand
+  def initialize(genre, author, source, date, label)
+    @id = Random.rand(1..1000)
     @genre = genre
     @author = author
     @source = source
-    @label = nil
+    @label = label
     @publish_date = date
     @archived = false
   end
@@ -15,6 +15,11 @@ class Item
     return unless can_be_archived?
 
     @archived = true
+  end
+
+  def label=(label)
+    @label = label
+    label.items << self unless label.items.include?(self)
   end
 
   private

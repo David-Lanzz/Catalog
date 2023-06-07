@@ -1,4 +1,4 @@
-require './item'
+require_relative 'item'
 
 class Book < Item
   attr_accessor :publisher, :cover_state
@@ -6,12 +6,10 @@ class Book < Item
   def initialize(publisher, cover_state, genre, author, source, date, label)
     super(genre, author, source, date, label)
     @publisher = publisher
-    @cover_state = cover_state
+    @cover_state = 'good'
   end
 
   def can_be_archived?
-    return true if super == true || @cover_state  == 'bad'
-
-    false
+    super || @cover_state  == 'bad'
   end
 end

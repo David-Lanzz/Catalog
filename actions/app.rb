@@ -1,11 +1,16 @@
 require './classes/album'
 require 'date'
 require './classes/genre'
+require './classes/book'
 
 class App
+  attr_accessor :books, :labels
+
   def initialize
     @music_albums = []
     @genres = []
+    @books = []
+    @labels = []
   end
 
   def list_all_music_albums
@@ -38,4 +43,27 @@ class App
     @music_albums << new_album
     puts 'Music album created successfully'
   end
+
+  def list_all_books
+    if @books.empty?
+      puts 'There are No books available'
+    else
+      puts 'Lists of Books:'
+      @books.each do |book|
+        puts "Cover_State: #{book.cover_state} Author: #{book.publisher}"
+      end
+    end
+  end
+
+  def list_all_labels
+    if @labels.empty?
+      puts 'There are No labels available'
+    else
+      puts 'Lists of Labels:'
+      @labels.each do |label|
+        puts "Name: #{label.name}"
+      end
+    end
+  end
+
 end
