@@ -1,7 +1,40 @@
 require './classes/book'
+require './classes/label'
+require './classes/item'
 
 describe Book do
-  book = Book.new('Bloomsbury', 'good', 'Fiction', 'J.K. Rowling', 'bookstore', '2022-11-11', 'Harry Potter')
+  label = Label.new('new label', 'red')
+  book = Book.new('Bloomsbury', 'good', 'Fiction', 'J.K. Rowling', 'bookstore', '2022-11-11', label)
+
+  context '#label' do
+    it 'should have a label' do
+      expect(book.label).to eq label
+    end
+  end
+
+  context 'title' do
+    it 'should have a title' do
+      expect(book.label.title).to eq 'new label'
+    end
+  end
+
+  context 'color' do
+    it 'should have a color' do
+      expect(book.label.color).to eq 'red'
+    end
+  end
+
+  context '#publisher' do
+    it 'should have a publisher' do
+      expect(book.publisher).to eq 'Bloomsbury'
+    end
+  end
+
+  context '#genre' do
+    it 'should have a genre' do
+      expect(book.genre).to eq 'Fiction'
+    end
+  end
 
   context '#initialize' do
     it 'should create a new book' do

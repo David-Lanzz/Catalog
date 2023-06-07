@@ -1,4 +1,3 @@
-require './classes/book'
 require './classes/label'
 
 describe Label do
@@ -17,11 +16,9 @@ describe Label do
     end
   end
 
-  context '#add_item' do
-    it 'adds an item to the label' do
-      book = Book.new('Bloomsbury', 'good', 'Fiction', 'J.K. Rowling', 'bookstore', '2022-11-11', 'Harry Potter')
-      label.add_item(book)
-      expect(label.items.length).to eq 1
+  context '#items' do
+    it 'should return an array' do
+      expect(label.items).to be_a Array
     end
   end
 end

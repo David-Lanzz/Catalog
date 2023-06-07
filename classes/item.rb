@@ -7,10 +7,10 @@ class Item
     @genre = genre
     @author = author
     @source = source
-    @label = label
-    label.items << self
     @publish_date = date
     @archived = false
+    @label = label
+    label.items << self unless label.items.include?(self)
   end
 
   def move_to_archive
