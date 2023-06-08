@@ -11,7 +11,8 @@ class App
 
   def list_all_music_albums
     @music_albums.each do |album|
-      puts "Genre: #{album.genre.name}, Author: #{album.author},Publish Date: #{album.publish_date}, Label: #{album.label},On Spotify: #{album.on_spotify}"
+      puts "Genre: #{album.genre.name}, Author: #{album.author},
+      Publish Date: #{album.publish_date}, Label: #{album.label},On Spotify: #{album.on_spotify}"
     end
   end
 
