@@ -8,6 +8,9 @@ class Choices
       app.list_all_music_albums
     when 5
       app.list_all_genres
+    when 13
+      puts 'Thankyou for using this catalog application, Hope to see you again soon'
+      exit
     end
   end
 end
