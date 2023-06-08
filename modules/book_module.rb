@@ -28,3 +28,27 @@ def save_book_to_json
     
     File.write("#{DATA_DIR}/books.json", JSON.generate(book_data))
 end
+
+def load_books_from_json
+    return unless File.exist?("#{DATA_DIR}/books.json")
+    books = JSON.parse(File.read("#{DATA_DIR}/books.json"))
+    books.each do |book|
+        label = Label.new(book['label_title'], book['label_color'])
+        @books << Book.new(book['publisher'], book['cover_state'], book['genre'], book['author'], book['source'], book['publish_date'], label)
+    end
+end
+
+def load_labels_from_json
+    return unless File.exist?("#{DATA_DIR}/labels.json")
+    labels = JSON.parse(File.read("#{DATA_DIR}/labels.json"))
+    labels.each do |label|
+        @labels << Label.new(label['title'], label['color'])
+    end
+end
+
+def load_data_from_json
+    load_labels_from_json
+    load_books_from_json
+
+    puts "Data loaded successfully"
+end
