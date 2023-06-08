@@ -19,7 +19,7 @@ describe Author do
 
   describe '#add_item' do
     it 'should add item to author' do
-      item = Item.new('Something', 'Someone', 'Source', '2023-06-05')
+      item = Item.new('2023-06-05')
       author.add_item(item)
       expect(author.items).to include item
     end
