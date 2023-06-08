@@ -6,7 +6,7 @@ class Options
       'List all movies',
       'List of games',
       'List all genres (e.g "Comedy", "Thriller")',
-      'List all labels',
+      'List all labels (e.g "Gift", "New")' ,
       'List all authors',
       'List all sources',
       'Add a book',
@@ -15,8 +15,8 @@ class Options
       'Add a game',
       'Exit'
     ]
-    options.each do |option|
-      puts option
+    options.each_with_index do |option, index|
+      puts "#{index + 1}. #{option}"
     end
   end
 end

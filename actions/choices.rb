@@ -1,9 +1,14 @@
+require_relative 'app'
+require_relative '../modules/book_module'
+
 class Choices
   def initialize(choice, app)
     @choice = choice
     case @choice
     when 1
       app.list_all_books
+    when 9
+      app.add_book
     when 10
       app.add_music_album
     when 2
@@ -12,9 +17,12 @@ class Choices
       app.list_all_genres
     when 6
       app.list_all_labels
-    when 13
+    when 13      
+      puts 'Data saved successfully'
       puts 'Thank You for using this app!'
       exit 0
-    end
+  else
+    puts 'Invalid option'
+  end
   end
 end
