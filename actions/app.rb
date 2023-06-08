@@ -3,14 +3,17 @@ require 'date'
 require '../classes/genre'
 require '../classes/game'
 require '../modules/game_module'
+require '../modules/author_module'
 
 class App
   include GameModule
+  include AuthorModule
 
   def initialize
     @music_albums = []
     @genres = []
     @games = load_game
+    @authors = load_author
   end
 
   def list_all_music_albums
@@ -44,6 +47,18 @@ class App
     puts 'Music album created successfully'
   end
 
+  def list_all_authors
+    if @authors.empty?
+      puts 'There are no authors in the library'
+      return
+    end
+    @authors.each do |author|
+      puts "ID: #{author.id}"
+      puts "First name: #{author.first_name}"
+      puts "Last name: #{author.last_name}"
+    end
+  end
+
   def list_all_games
     if @games.empty?
       puts 'there is no games in the list'
@@ -70,6 +85,7 @@ class App
     last_played_at = gets.chomp
     game = Game.new(publish_date, multiplayer, last_played_at)
     @games.push(game)
+    create_author(game)
     save_game
     puts 'Game created successfully'
   end
