@@ -10,7 +10,7 @@ class Choices
       app.list_all_games
     when 5
       app.list_all_genres
-    when 7 
+    when 7
       app.list_all_authors
     when 12
       app.add_game
