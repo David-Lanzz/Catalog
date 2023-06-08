@@ -1,5 +1,6 @@
 require './classes/album'
 require 'date'
+require "./storage/storage.rb"
 require './classes/genre'
 
 class App
@@ -31,10 +32,15 @@ class App
     genre = Genre.new(response)
     @genres.push(genre) unless @genres.include?(genre) == true
     publish_date = DateTime.now
-    puts 'What is the source of the album?'
+    puts 'What label is this album in?'
+    label = gets.chomp
+    puts 'Who wrote this album?'
     source = gets.chomp
-    new_album = MusicAlbum.new(on_spotify, genre, author, source, publish_date)
+    new_album = MusicAlbum.new(on_spotify, genre, author, publish_date, label,source)
     @music_albums << new_album
+    genre.items << new_album
+    Storage.new.store_album(@music_albums)
+    Storage.new.store_genre(@genres)
     puts 'Music album created successfully'
   end
 end
