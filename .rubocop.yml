@@ -24,6 +24,8 @@ Metrics/ParameterLists:
   Enabled: false
 Style/OptionalBooleanParameter:
   Enabled: false
+Style/OptionalArguments:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

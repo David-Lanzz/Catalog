@@ -1,6 +1,6 @@
 require './classes/album'
 require 'date'
-require "./storage/storage.rb"
+require './storage/storage'
 require './classes/genre'
 
 class App
@@ -11,7 +11,8 @@ class App
 
   def list_all_music_albums
     @music_albums.each do |album|
-      puts "Genre: #{album.genre.name}, Author: #{album.author},Publish Date: #{album.publish_date}, Label: #{album.label},On Spotify: #{album.on_spotify}"
+      puts "Genre: #{album.genre.name}, Author: #{album.author},Publish Date: #{album.publish_date},
+       Label: #{album.label},On Spotify: #{album.on_spotify}"
     end
   end
 
@@ -36,7 +37,7 @@ class App
     label = gets.chomp
     puts 'Who wrote this album?'
     source = gets.chomp
-    new_album = MusicAlbum.new(on_spotify, genre, author, publish_date, label,source)
+    new_album = MusicAlbum.new(on_spotify, genre, author, publish_date, label, source)
     @music_albums << new_album
     genre.items << new_album
     Storage.new.store_album(@music_albums)
