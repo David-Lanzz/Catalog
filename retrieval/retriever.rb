@@ -40,24 +40,3 @@ class Retrieve
     @genre_arr
   end
 end
-
-
-# preserved_albums = JSON.parse(file.read)
-# preserved_albums.each do |album|
-#   @album_arr << {
-#     genre: album['genre'],
-#     author: album['author'],
-#     publish_date: album['publish_date'],
-#     label: album['label'],
-#     on_spotify: album['on_spotify'],
-#     source: album['source']
-#   }
-
-
-# preserved_genres = JSON.parse(file.read)
-# preserved_genres.each do |genre|
-#   @genre_arr << {
-#     id: genre['id'],
-#     name: genre['name'],
-#     items: genre['items'],
-#   }
