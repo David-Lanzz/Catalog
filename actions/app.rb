@@ -39,12 +39,13 @@ class App
     puts 'What is the genre of this album?'
     response = gets.chomp
     genre = Genre.new(response)
-    publish_date = DateTime.now
+    puts 'What is the publish date of this project?'
+    publish_date = gets.chomp
     puts 'What label is this album in?'
     label = gets.chomp
     puts 'Who wrote this album?'
     source = gets.chomp
-    new_album = MusicAlbum.new(on_spotify, genre, author, publish_date, label, source)
+    new_album = MusicAlbum.new(on_spotify, genre, author, label, publish_date, source)
     new_album.genre.items << { genre: new_album.genre.name, author: new_album.author,
                                publish_date: new_album.publish_date,
                                label: new_album.label, on_spotify: new_album.on_spotify, source: new_album.source }

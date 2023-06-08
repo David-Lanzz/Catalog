@@ -3,12 +3,8 @@ class Item
   attr_accessor :publish_date, :genre, :author, :label
   attr_reader :archived, :source
 
-  def initialize(genre, author, label, date, source)
+  def initialize(date)
     @id = Random.rand
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
     @publish_date = date
     @archived = false
   end
