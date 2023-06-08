@@ -1,11 +1,16 @@
 require '../classes/album'
 require 'date'
 require '../classes/genre'
+require '../classes/game'
+require '../modules/game_module'
 
 class App
+  include GameModule
+
   def initialize
     @music_albums = []
     @genres = []
+    @games = load_game
   end
 
   def list_all_music_albums
@@ -39,8 +44,38 @@ class App
     puts 'Music album created successfully'
   end
 
+  def list_all_games
+    if @games.empty?
+      puts 'there is no games in the list'
+      nil
+    else
+      @games.each do |game|
+        puts "publish date : #{game.publish_date}"
+        puts "Multiplayer : #{game.multiplayer}"
+        puts "last played at : #{game.last_played_at}"
+      end
+    end
+  end
+
+  def add_game
+    puts 'Please add the publish date of the game : YYYY-MM-DD'
+    publish_date = gets.chomp
+    puts 'Is it multiplayer? true/false'
+    multiplayer = gets.chomp
+    if multiplayer != 'true' && multiplayer != 'false'
+      puts 'you entered invalid option. please enter true or false'
+      return
+    end
+    puts 'when was this game last played at? enter YYYY-MM-DD'
+    last_played_at = gets.chomp
+    game = Game.new(publish_date, multiplayer, last_played_at)
+    @games.push(game)
+    save_game
+    puts 'Game created successfully'
+  end
+
   def exit_app
     puts 'Thank you for using the app'
     exit
-    end
+  end
 end

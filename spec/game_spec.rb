@@ -2,7 +2,7 @@ require_relative '../classes/item'
 require_relative '../classes/game'
 
 describe Game do
-  game = Game.new('Action', 'John Doe', 'Source', '2012-12-12', true, '2019-01-01')
+  game = Game.new('2012-12-12', true, '2019-01-01')
 
   describe '#initialize' do
     it 'should initialize a game ' do
