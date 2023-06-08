@@ -94,17 +94,6 @@ class App
     puts 'Book created successfully'
   end
 
-  # def list_all_items
-  #   puts 'Lists of Items:'
-  #   @books.each do |book|
-  #     puts "Cover_State: #{book.cover_state} Author: #{book.publisher}"
-  #   end
-  #   @music_albums.each do |album|
-  #     puts "Genre: #{album.genre.name}, Author: #{album.author},
-  #     Publish Date: #{album.publish_date}, Label: #{album.label},On Spotify: #{album.on_spotify}"
-  #   end
-  # end
-  
   def save_data_to_json
     FileUtils.mkdir_p(DATA_DIR)
 
