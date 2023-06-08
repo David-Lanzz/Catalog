@@ -15,7 +15,7 @@ class Options
       '12) Add a game',
       '13) Exit'
     ]
-    options.each do |option|
+    options.each do |option, _index|
       puts option
     end
   end

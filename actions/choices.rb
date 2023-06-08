@@ -6,11 +6,18 @@ class Choices
       app.add_music_album
     when 2
       app.list_all_music_albums
+    when 4
+      app.list_all_games
     when 5
       app.list_all_genres
+    when 7
+      app.list_all_authors
+    when 12
+      app.add_game
     when 13
-      puts 'Thankyou for using this catalog application, Hope to see you again soon'
-      exit
+      app.exit_app
+    else
+      puts 'Invalid option'
     end
   end
 end
