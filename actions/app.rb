@@ -10,8 +10,6 @@ require './modules/book_module'
 require 'fileutils'
 require './classes/album'
 
-
-
 class App
   include GameModule
   include AuthorModule
