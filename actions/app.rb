@@ -1,10 +1,10 @@
-require './classes/album'
+require '../classes/album'
 require 'date'
-require './storage/storage'
-require './classes/genre'
-require './classes/game'
-require './modules/game_module'
-require './modules/author_module'
+require '../storage/storage'
+require '../classes/genre'
+require '../classes/game'
+require '../modules/game_module'
+require '../modules/author_module'
 
 class App
   include GameModule

@@ -1,8 +1,8 @@
-require './classes/item'
-require './classes/genre'
+require_relative '../classes/item'
+require_relative '../classes/genre'
 
 describe Genre do
-  item = Item.new('Something', 'Someone', 'Source', 'DMW', '2023-06-05')
+  item = Item.new('2023-06-05')
   genre = Genre.new('Thriller')
   genre.add_item(item)
 

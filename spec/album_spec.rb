@@ -1,4 +1,4 @@
-require './classes/album'
+require_relative '../classes/album'
 
 describe MusicAlbum do
   new_album = MusicAlbum.new('on_spotify', 'genre', 'author', 'label', '2016-05-04', 'source')
