@@ -16,7 +16,7 @@ class App
   include AuthorModule
   attr_accessor :books, :labels
 
-  def initialize(music_albums, genres,sources)
+  def initialize(music_albums, genres, sources)
     @music_albums = music_albums
     @genres = genres
     @games = load_game
@@ -69,13 +69,13 @@ class App
                                label: new_album.label, on_spotify: new_album.on_spotify, source: new_album.source }
     @music_albums << { genre: new_album.genre.name, author: new_album.author, publish_date: new_album.publish_date,
                        label: new_album.label, on_spotify: new_album.on_spotify, source: new_album.source.name }
-                       @sources << {
-                        name: new_album.source.name
-                       }
-    continue_addition_of_music_album(@music_albums, @genres, genre,@sources)
+    @sources << {
+      name: new_album.source.name
+    }
+    continue_addition_of_music_album(@music_albums, @genres, genre, @sources)
   end
 
-  def continue_addition_of_music_album(music_albums, genres, genre,sources)
+  def continue_addition_of_music_album(music_albums, genres, genre, sources)
     genres << { name: genre.name, id: genre.id } unless @genres.include?({ name: genre.name, id: genre.id }) == true
     Storage.new.store_album(music_albums)
     Storage.new.store_genre(genres)
