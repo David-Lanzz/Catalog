@@ -1,7 +1,7 @@
 require_relative 'item'
 
 class Genre
-  attr_accessor :name
+  attr_accessor :name, :id, :items
 
   def initialize(name)
     @id = Random.rand

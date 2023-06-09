@@ -20,9 +20,15 @@ Metrics/BlockLength:
   Max: 30
 Metrics/CyclomaticComplexity:
   Max: 10
+Metrics/MethodLength:
+  Max: 21
 Metrics/ParameterLists:
   Enabled: false
 Style/OptionalBooleanParameter:
+  Enabled: false
+Style/OptionalArguments:
+  Enabled: false
+Naming/AccessorMethodName:
   Enabled: false
 
 Style/Documentation:

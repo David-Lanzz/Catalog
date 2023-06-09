@@ -1,22 +1,22 @@
 class Options
   def initialize
-    @options = [
-      'List all books',
-      'List all music albums',
-      'List all movies',
-      'List of games',
-      'List all genres (e.g "Comedy", "Thriller")',
-      'List all labels',
-      'List all authors',
-      'List all sources',
-      'Add a book',
-      'Add a music album',
-      'Add a movie',
-      'Add a game',
-      'exit the app'
+    options = [
+      '1) List all books',
+      '2) List all music albums',
+      '3) List all movies',
+      '4) List of games',
+      '5) List all genres (e.g "Comedy", "Thriller")',
+      '6) List all labels',
+      '7) List all authors',
+      '8) List all sources',
+      '9) Add a book',
+      '10) Add a music album',
+      '11) Add a movie',
+      '12) Add a game',
+      '13) Exit'
     ]
-    @options.each_with_index do |option, index|
-      puts "#{index + 1}. #{option}"
+    options.each do |option, _index|
+      puts option
     end
   end
 end
