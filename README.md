@@ -52,7 +52,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 💻 Getting Started with # 📖 Catalog of my things <a name="getting-started"></a>
+## 💻 Getting Started with Catalog of my things <a name="getting-started"></a>
 > To get a local copy up and running, follow these steps.
 
 ### Prerequisites
