@@ -9,17 +9,19 @@ require './classes/label'
 require './modules/book_module'
 require 'fileutils'
 require './classes/album'
+require "./classes/source.rb"
 
 class App
   include GameModule
   include AuthorModule
   attr_accessor :books, :labels
 
-  def initialize(music_albums, genres)
+  def initialize(music_albums, genres,sources)
     @music_albums = music_albums
     @genres = genres
     @games = load_game
     @authors = load_author
+    @sources = sources
     @books = []
     @labels = []
     load_data_from_json
@@ -38,6 +40,12 @@ class App
     end
   end
 
+  def list_all_sources
+    @sources.each do |source|
+      puts "Name: #{source[:name]}"
+    end
+  end
+
   def add_music_album
     puts 'Who is the author of this album?'
     author = gets.chomp
@@ -52,20 +60,26 @@ class App
     puts 'What label is this album in?'
     label = gets.chomp
     puts 'Who wrote this album?'
-    source = gets.chomp
+    response = gets.chomp
+    source = Source.new(response)
     new_album = MusicAlbum.new(on_spotify, genre, author, label, publish_date, source)
+    puts new_album.source
     new_album.genre.items << { genre: new_album.genre.name, author: new_album.author,
                                publish_date: new_album.publish_date,
                                label: new_album.label, on_spotify: new_album.on_spotify, source: new_album.source }
     @music_albums << { genre: new_album.genre.name, author: new_album.author, publish_date: new_album.publish_date,
-                       label: new_album.label, on_spotify: new_album.on_spotify, source: new_album.source }
-    continue_addition_of_music_album(@music_albums, @genres, genre)
+                       label: new_album.label, on_spotify: new_album.on_spotify, source: new_album.source.name }
+                       @sources << {
+                        name: new_album.source.name
+                       }
+    continue_addition_of_music_album(@music_albums, @genres, genre,@sources)
   end
 
-  def continue_addition_of_music_album(music_albums, genres, genre)
+  def continue_addition_of_music_album(music_albums, genres, genre,sources)
     genres << { name: genre.name, id: genre.id } unless @genres.include?({ name: genre.name, id: genre.id }) == true
     Storage.new.store_album(music_albums)
     Storage.new.store_genre(genres)
+    Storage.new.store_sources(sources)
     puts 'Music album created successfully'
   end
 

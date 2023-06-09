@@ -23,6 +23,8 @@ class Choices
       app.add_book
     when 6
       app.list_all_labels
+    when 8
+      app.list_all_sources
     when 13
       puts 'Data saved successfully'
       puts 'Thank You for using this app!'

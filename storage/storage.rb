@@ -30,4 +30,13 @@ class Storage
     end
     File.write('./json_db/genre.json', JSON.generate(genre_arr))
   end
+  def store_sources(sources)
+    source_arr = []
+    sources.each do |source|
+      source_arr << {
+        name: source[:name]
+      }
+    end
+    File.write('./json_db/source.json', JSON.generate(source_arr))
+  end
 end
