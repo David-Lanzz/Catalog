@@ -15,7 +15,7 @@ module AuthorModule
   end
 
   def load_author
-    file = './json_db/authors.json'
+    file = 'authors.json'
     data = []
     if File.exist?(file) && !File.empty?(file)
       JSON.parse(File.read(file)).each do |author|

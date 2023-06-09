@@ -6,18 +6,18 @@ CREATE TABLE item (
   author INT REFERENCES author(id),
   label INT REFERENCES label(id),
   publish_date DATE,
-  archived BOOLEAN 
+  archived BOOLEAN
 );
 
 CREATE TABLE game (
-  id INT PRIMARY KEY REFERENCES item(id), , 
-  publish_date DATE, 
+  id INT PRIMARY KEY REFERENCES item(id), ,
+  publish_date DATE,
   multiplayer BOOLEAN,
-  last_played_at DATE, 
+  last_played_at DATE
 );
 
 CREATE TABLE author (
-  id INT PRIMARY KEY, 
-  first_name VARCHAR(50), 
+  id INT PRIMARY KEY,
+  first_name VARCHAR(50),
   last_name VARCHAR(50)
 );

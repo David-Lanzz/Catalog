@@ -5,7 +5,7 @@ require 'fileutils'
 
 module GameModule
   def load_game
-    file = './json_db/games.json'
+    file = 'games.json'
     data = []
     if File.exist?(file) && !File.empty?(file)
       JSON.parse(File.read(file)).each do |element|
@@ -18,7 +18,7 @@ module GameModule
   def save_game
     data = []
     directory = './json_db'
-    file_path = "#{directory}/games.json"
+    file_path = './json_db/games.json'
 
     begin
       # Create the directory if it doesn't exist
