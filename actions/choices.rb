@@ -9,12 +9,6 @@ class Choices
       app.list_all_books
     when 9
       app.add_book
-    when 10
-      app.add_music_album
-    when 2
-      app.list_all_music_albums
-    when 5
-      app.list_all_genres
     when 6
       app.list_all_labels
     when 13      

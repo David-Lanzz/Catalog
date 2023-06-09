@@ -17,9 +17,6 @@ def save_book_to_json
         {
             publisher: book.publisher,
             cover_state: book.cover_state,
-            genre: book.genre,
-            author: book.author,
-            source: book.source,
             publish_date: book.publish_date,
             label_title: book.label.title,
             label_color: book.label.color
