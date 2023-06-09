@@ -37,7 +37,6 @@ module AuthorModule
         data << { id: author.id, first_name: author.first_name, last_name: author.last_name }
       end
 
-
       File.open(file_path, 'w') do |file|
         file.puts(JSON.pretty_generate(data))
       end
