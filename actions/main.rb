@@ -2,6 +2,7 @@ require_relative 'options'
 require_relative 'choices'
 require_relative 'app'
 require './retrieval/retriever'
+require_relative '../modules/book_module'
 
 class Main
   def initialize
@@ -18,6 +19,7 @@ class Main
       Options.new
       choice = gets.chomp.to_i
       Choices.new(choice, @app)
+      @app.save_data_to_json
     end
   end
 end
