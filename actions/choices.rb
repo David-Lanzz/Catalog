@@ -9,21 +9,21 @@ class Choices
       app.list_all_books
     when 2
       app.list_all_music_albums
-    when 4
+    when 3
       app.list_all_games
-    when 5
+    when 4
       app.list_all_genres
-    when 6
+    when 5
       app.list_all_labels
-    when 7
+    when 6
       app.list_all_authors
-    when 9
+    when 7
       app.add_book
-    when 10
+    when 8
       app.add_music_album
-    when 12
+    when 9
       app.add_game
-    when 13
+    when 10
       puts 'Data saved successfully'
       puts 'Thank You for using this app!'
       exit

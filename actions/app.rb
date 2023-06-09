@@ -107,6 +107,7 @@ class App
     @labels << label
     book = Book.new(publisher, cover_state, publish_date, label)
     @books << book
+    create_author(book)
     puts 'Book created successfully'
   end
 
