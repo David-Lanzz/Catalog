@@ -1,7 +1,7 @@
 require_relative 'options'
 require_relative 'choices'
 require_relative 'app'
-require './retrieval/retriever'
+require '../retrieval/retriever'
 
 class Main
   def initialize

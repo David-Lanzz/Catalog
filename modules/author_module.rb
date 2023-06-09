@@ -27,13 +27,24 @@ module AuthorModule
 
   def save_author
     data = []
-    direcotry = './json_db/authors.json'
-    File.new(direcotry, 'w') unless File.exist?(direcotry)
-    @authors.each do |author|
-      data << { id: author.id, first_name: author.first_name, last_name: author.last_name }
-    end
-    File.open(direcotry, 'w') do |file|
-      file.puts(JSON.pretty_generate(data))
+    directory = './json_db'
+    file_path = './json_db/authors.json'
+    begin
+      # Create the directory if it doesn't exist
+      FileUtils.mkdir_p(directory)
+
+      @authors.each do |author|
+        data << { id: author.id, first_name: author.first_name, last_name: author.last_name }
+      end
+
+
+      File.open(file_path, 'w') do |file|
+        file.puts(JSON.pretty_generate(data))
+      end
+      puts 'author data saved successfully.'
+    rescue StandardError => e
+      puts "Error occurred while saving the game data: #{e.message}"
+      puts e.backtrace
     end
   end
 end

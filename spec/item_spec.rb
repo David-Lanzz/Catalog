@@ -4,8 +4,8 @@ require_relative '../classes/item'
 describe Item do
   item = Item.new('2023-06-05')
 
-item.author='Someone'
-item.genre = 'Something'
+  item.author = 'Someone'
+  item.genre = 'Something'
   it "Should item to be an instance of the class 'Item'" do
     expect(item).to be_instance_of(Item)
   end
