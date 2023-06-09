@@ -5,24 +5,24 @@ class Choices
   def initialize(choice, app)
     @choice = choice
     case @choice
-    when 10
-      app.add_music_album
+    when 1
+      app.list_all_books
     when 2
       app.list_all_music_albums
     when 4
       app.list_all_games
     when 5
       app.list_all_genres
-    when 7
-      app.list_all_authors
-    when 12
-      app.add_game
-    when 1
-      app.list_all_books
-    when 9
-      app.add_book
     when 6
       app.list_all_labels
+    when 7
+      app.list_all_authors
+    when 9
+      app.add_book
+    when 10
+      app.add_music_album
+    when 12
+      app.add_game
     when 13
       puts 'Data saved successfully'
       puts 'Thank You for using this app!'
