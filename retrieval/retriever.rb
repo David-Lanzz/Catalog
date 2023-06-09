@@ -3,8 +3,8 @@ require 'json'
 class Retrieve
   def get_albums
     @album_arr = []
-    if File.exist?('album.json')
-      File.open('album.json', 'r') do |file|
+    if File.exist?('./json_db/album.json')
+      File.open('./json_db/album.json', 'r') do |file|
         new_file = JSON.parse(file.read)
         new_file.each do |info|
           @album_arr << {
@@ -25,8 +25,8 @@ class Retrieve
 
   def get_genres
     @genre_arr = []
-    if File.exist?('genre.json')
-      File.open('genre.json', 'r') do |file|
+    if File.exist?('./json_db/genre.json')
+      File.open('./json_db/genre.json', 'r') do |file|
         new_file = JSON.parse(file.read)
         new_file.each do |info|
           @genre_arr << {

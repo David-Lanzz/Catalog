@@ -1,6 +1,11 @@
 require 'json'
+require 'fileutils'
 
 class Storage
+  def initialize
+    FileUtils.mkdir_p('./json_db')
+  end
+
   def store_album(albums)
     album_arr = []
     albums.each do |album|
@@ -13,7 +18,7 @@ class Storage
         source: album[:source]
       }
     end
-    File.write('album.json', JSON.generate(album_arr))
+    File.write('./json_db/album.json', JSON.generate(album_arr))
   end
 
   def store_genre(genres)
@@ -23,6 +28,6 @@ class Storage
         name: genre[:name]
       }
     end
-    File.write('genre.json', JSON.generate(genre_arr))
+    File.write('./json_db/genre.json', JSON.generate(genre_arr))
   end
 end
