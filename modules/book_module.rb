@@ -17,9 +17,6 @@ def save_book_to_json
     {
       publisher: book.publisher,
       cover_state: book.cover_state,
-      genre: book.genre,
-      author: book.author,
-      source: book.source,
       publish_date: book.publish_date,
       label_title: book.label.title,
       label_color: book.label.color
@@ -35,8 +32,7 @@ def load_books_from_json
   books = JSON.parse(File.read("#{DATA_DIR}/books.json"))
   books.each do |book|
     label = Label.new(book['label_title'], book['label_color'])
-    @books << Book.new(book['publisher'], book['cover_state'], book['genre'], book['author'], book['source'],
-                       book['publish_date'], label)
+    @books << Book.new(book['publisher'], book['cover_state'], book['publish_date'], label)
   end
 end
 

@@ -3,7 +3,7 @@ require './classes/label'
 
 describe Book do
   label = Label.new('new label', 'red')
-  book = Book.new('Bloomsbury', 'good', 'Fiction', 'J.K. Rowling', 'bookstore', '2022-11-11', label)
+  book = Book.new('Bloomsbury', 'good', '2022-11-11', label)
 
   context '#label' do
     it 'should have a label' do
@@ -26,12 +26,6 @@ describe Book do
   context '#publisher' do
     it 'should have a publisher' do
       expect(book.publisher).to eq 'Bloomsbury'
-    end
-  end
-
-  context '#genre' do
-    it 'should have a genre' do
-      expect(book.genre).to eq 'Fiction'
     end
   end
 

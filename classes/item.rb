@@ -1,13 +1,10 @@
 class Item
-  attr_accessor :genre, :author, :source, :publish_date, :archived
+  attr_accessor :publish_date, :archived
   attr_reader :label
 
-  def initialize(_publish_date, label)
+  def initialize(publish_date, label)
     @id = Random.rand(1..1000)
-    @genre = genre
-    @author = author
-    @source = source
-    @publish_date = date
+    @publish_date = publish_date
     @archived = false
     @label = label
     label.items << self unless label.items.include?(self)
