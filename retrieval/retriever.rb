@@ -39,4 +39,20 @@ class Retrieve
     end
     @genre_arr
   end
+  def get_sources
+    @genre_arr = []
+    if File.exist?('./json_db/source.json')
+      File.open('./json_db/source.json', 'r') do |file|
+        new_file = JSON.parse(file.read)
+        new_file.each do |info|
+          @source_arr << {
+            name: info['name']
+          }
+        end
+      end
+    else
+      @source_arr = []
+    end
+    @source_arr
+  end
 end

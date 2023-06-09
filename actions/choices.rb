@@ -24,6 +24,8 @@ class Choices
     when 9
       app.add_game
     when 10
+      app.list_all_sources
+    when 11
       puts 'Data saved successfully'
       puts 'Thank You for using this app!'
       exit
