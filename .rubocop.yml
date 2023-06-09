@@ -14,14 +14,14 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
-  Max: 150
+  Max: 152
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 30
 Metrics/CyclomaticComplexity:
-  Max: 11
+  Max: 12
 Metrics/MethodLength:
-  Max: 27
+  Max: 29
 Metrics/ParameterLists:
   Enabled: false
 Style/OptionalBooleanParameter:

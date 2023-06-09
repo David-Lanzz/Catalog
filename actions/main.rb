@@ -7,7 +7,7 @@ require_relative '../modules/book_module'
 class Main
   def initialize
     retrieved = Retrieve.new
-    @app = App.new(retrieved.get_albums, retrieved.get_genres,retrieved.get_sources)
+    @app = App.new(retrieved.get_albums, retrieved.get_genres, retrieved.get_sources)
   end
 
   def run

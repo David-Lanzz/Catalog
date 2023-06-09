@@ -39,6 +39,7 @@ class Retrieve
     end
     @genre_arr
   end
+
   def get_sources
     @genre_arr = []
     if File.exist?('./json_db/source.json')
