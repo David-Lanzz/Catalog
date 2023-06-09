@@ -1,6 +1,6 @@
 require 'json'
 
-DATA_DIR = 'data'.freeze
+DATA_DIR = './json_db'.freeze
 
 def save_label_to_json
   label_data = @labels.map do |label|
