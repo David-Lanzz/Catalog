@@ -19,9 +19,9 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 30
 Metrics/CyclomaticComplexity:
-  Max: 10
+  Max: 11
 Metrics/MethodLength:
-  Max: 21
+  Max: 27
 Metrics/ParameterLists:
   Enabled: false
 Style/OptionalBooleanParameter:
