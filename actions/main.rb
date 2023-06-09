@@ -6,7 +6,8 @@ require_relative '../modules/book_module'
 class Main
   def initialize
     @app = App.new
-  end  
+  end
+
   def run
     puts '----------------------'
     puts 'Welcome to the app!'

@@ -2,7 +2,7 @@ require './classes/label'
 
 describe Label do
   label = Label.new('new label', 'red')
-  
+
   context '#title' do
     it 'should have a title' do
       expect(label.title).to eq 'new label'

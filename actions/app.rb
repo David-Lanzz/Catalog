@@ -54,7 +54,9 @@ class App
     else
       puts 'Lists of Books:'
       @books.each do |book|
-        puts "Publisher: #{book.publisher}, Cover_State: #{book.cover_state}, Genre: #{book.genre}, Author: #{book.publisher}, Source: #{book.source}, Publish Date: #{book.publish_date}, Label Title: #{book.label.title}, Label Color: #{book.label.color}"
+        puts "Publisher: #{book.publisher}, Cover_State: #{book.cover_state},
+        Genre: #{book.genre}, Author: #{book.publisher}, Source: #{book.source},
+        Publish Date: #{book.publish_date}, Label Title: #{book.label.title}, Label Color: #{book.label.color}"
       end
     end
   end
@@ -75,12 +77,6 @@ class App
     publisher = gets.chomp
     puts 'Enter Cover State of the book:'
     cover_state = gets.chomp
-    puts 'Enter Genre of the book:'
-    genre = gets.chomp
-    puts 'Enter Author of the book:'
-    author = gets.chomp
-    puts 'Enter Source of the book:'
-    source = gets.chomp
     puts 'Enter Publish Date of the book:'
     publish_date = gets.chomp
     puts 'Enter Label Title of the book:'

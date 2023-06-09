@@ -2,7 +2,7 @@ class Item
   attr_accessor :genre, :author, :source, :publish_date, :archived
   attr_reader :label
 
-  def initialize(genre, author, source, date, label)
+  def initialize(_publish_date, label)
     @id = Random.rand(1..1000)
     @genre = genre
     @author = author

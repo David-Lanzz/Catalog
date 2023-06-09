@@ -6,7 +6,7 @@ class Options
       'List all movies',
       'List of games',
       'List all genres (e.g "Comedy", "Thriller")',
-      'List all labels (e.g "Gift", "New")' ,
+      'List all labels (e.g "Gift", "New")',
       'List all authors',
       'List all sources',
       'Add a book',
